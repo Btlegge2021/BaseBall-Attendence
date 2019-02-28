@@ -368,6 +368,7 @@ function createColorSymbols(data, map,attributes){
 		   $('.range-slider').val(0);
 			yearValue.innerHTML = yearRanges[0];
 			updatePropSymbols(map, attributes[0]);
+			updateLegend(map,attributes[0]);
         } else if ($(this).attr('id') == 'AL East'){
 			map.removeLayer(teamGroup);
 			teamGroup = L.layerGroup([ale]);
@@ -375,6 +376,7 @@ function createColorSymbols(data, map,attributes){
 			$('.range-slider').val(0);
 			yearValue.innerHTML = yearRanges[0];
 			updatePropSymbols(map, attributes[0]);
+			updateLegend(map,attributes[0]);
 		} else if ($(this).attr('id') == 'AL West'){
 			map.removeLayer(teamGroup);
 			teamGroup = L.layerGroup([alw]);
@@ -382,6 +384,7 @@ function createColorSymbols(data, map,attributes){
 			$('.range-slider').val(0);
 			yearValue.innerHTML = yearRanges[0];
 			updatePropSymbols(map, attributes[0]);
+			updateLegend(map,attributes[0]);
 		} else if ($(this).attr('id') == 'NL Central'){
 			map.removeLayer(teamGroup);
 			teamGroup = L.layerGroup([nlc]);
@@ -389,6 +392,7 @@ function createColorSymbols(data, map,attributes){
 			$('.range-slider').val(0);
 			yearValue.innerHTML = yearRanges[0];
 			updatePropSymbols(map, attributes[0]);
+			updateLegend(map,attributes[0]);
 		} else if ($(this).attr('id') == 'NL East'){
 			map.removeLayer(teamGroup);
 			teamGroup = L.layerGroup([nle]);
@@ -396,6 +400,7 @@ function createColorSymbols(data, map,attributes){
 			$('.range-slider').val(0);
 			yearValue.innerHTML = yearRanges[0];
 			updatePropSymbols(map, attributes[0]);
+			updateLegend(map,attributes[0]);
 		} else if ($(this).attr('id') == 'NL West'){
 			map.removeLayer(teamGroup);
 			teamGroup = L.layerGroup([nlw]);
@@ -403,6 +408,7 @@ function createColorSymbols(data, map,attributes){
 			$('.range-slider').val(0);
 			yearValue.innerHTML = yearRanges[0];
 			updatePropSymbols(map, attributes[0]);
+			updateLegend(map,attributes[0]);
 		} else if ($(this).attr('id') == 'All'){
 			map.removeLayer(teamGroup);
 			teamGroup = L.layerGroup([alc, ale, alw, nlc, nle, nlw]);
@@ -410,6 +416,7 @@ function createColorSymbols(data, map,attributes){
 			$('.range-slider').val(0);
 			yearValue.innerHTML = yearRanges[0];
 			updatePropSymbols(map, attributes[0]);
+			updateLegend(map,attributes[0]);
 		}
         });
 
