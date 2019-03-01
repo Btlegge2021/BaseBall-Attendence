@@ -34,9 +34,9 @@ function updatePropSymbols(map,attribute){
             layer.setStyle(options);
 	    //Refresh pop ups
             var year = attribute.split("_")[1];
-            var panelContent = "<p><b>Stadium:</b> " +props.Stadium + "</p>";
-			panelContent +="<p><b>Attendance in " + year + ":</b> "+ props[attribute] + "</p>";
-            var popupContent = "<p><b>Team:</b> " +props.Team + "</p>";
+			var popupContent ="<p><b>Attendance in " + year + ":</b> "+ props[attribute] + "</p>";
+            var panelContent = "<p><b>Team:</b> " +props.Team + "</p>";
+			panelContent += "<p><b>Stadium:</b> " +props.Stadium + "</p>";
             layer.bindPopup(popupContent,{
                 offest: new L.point(0,-radius)
             });
@@ -70,7 +70,7 @@ function createSquenceControls(map, attributes){
         step: 1
     });
 	//Create filter panel and create buttons.
-	$("#panel").append('<br><br><div id = "filterPanel" class = "btn-group"><h2>Divisions Filter</h2></div>');
+	$("#panel").append('<br><div id = "filterPanel" class = "btn-group"><h2>Divisions Filter</h2></div>');
 	for (var i = 0; i < divisions.length; i++){
 		divis = divisions[i];
 		console.log(divisions[i]);
@@ -149,7 +149,7 @@ function createLegend(map, attributes){
             $(container).append('<div id="temporal-legend">')
 
             //Step 1: start attribute legend svg string
-            var svg = '<svg id="attribute-legend" width="130px" height="100px">';
+            var svg = '<svg id="attribute-legend" width="160px" height="100px">';
 			
 			var circles = {
             max: 20,
@@ -199,7 +199,7 @@ function updateLegend(map, attribute){
 			r: radius
 		});
 		
-		$('#'+key+'-text').text(Math.round(circleValues[key]));
+		$('#'+key+'-text').text(Math.round(circleValues[key]) + " People");
 	};
 };
 
@@ -268,8 +268,9 @@ function pointToLayer(feature, latlng, attributes){
     
     //Create panelContent and popupContent for points and side panel
     var panelContent ="<p><b>Stadium:</b> "+ feature.properties.Stadium + "</p>";
-	panelContent += "<p><b>Attendance in " + year + ":</b> "+feature.properties[attribute] + "</p>";
-    var popupContent = "<p><b>Team:</b> "+feature.properties.Team + "</p>";
+	panelContent += "<p><b>Team:</b> "+feature.properties.Team + "</p>";
+	var popupContent = "<p><b>Attendance in " + year + ":</b> "+feature.properties[attribute] + "</p>";
+    
     //add popup content to points	
     layer.bindPopup(popupContent);
     //Make pop up content viewble once point is hovered over.
